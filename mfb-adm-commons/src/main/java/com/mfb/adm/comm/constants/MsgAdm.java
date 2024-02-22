@@ -18,4 +18,6 @@ public class MsgAdm {
 	public static final String RESPONSE_RECURSOS_NO_EXISTE = "No existe el recurso enviado ";
 	public static final String RESPONSE_RECURSOS_NO_EXISTE_CHATPDF = "El recurso enviado no esta disponible ";
 	public static final String RESPONSE_LIMITE_EXCEDIDO = "Usted supero el límite de %s preguntas diarias";
+	// clientes
+	public static final String RESPONSE_CLIENTES_EXISTE_CODIGO = "Ya existe un cliente con el código enviado ";
 }
