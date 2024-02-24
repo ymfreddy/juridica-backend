@@ -21,8 +21,8 @@ import lombok.Setter;
 public class EntUsuario extends EntBase {
 	@Column(name = "id_empresa")
 	private Long idEmpresa;
-	@Column(name = "id_par_tipo_usuario")
-	private Integer idTipoUsuario;
+	@Column(name = "codigo_tipo_usuario")
+	private String codigoTipoUsuario;
 	private String nombre;
 	private String paterno;
 	private String materno;

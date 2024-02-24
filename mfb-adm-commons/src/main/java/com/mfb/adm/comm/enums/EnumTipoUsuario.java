@@ -5,41 +5,39 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum EnumTipoUsuario {
-	SUPER_USUARIO(1), ADMINISTRADOR(2), OPERADOR(3), FACTURACION(4), ASESOR(5), CLIENTE_USUARIO(6);
-	private Integer valor;
+	SUPER_USUARIO("USP"), ADMINISTRADOR("UADM"), MEDICO("UMED"), ASISTENTE("UASIS"), EXTERNO("UEXT");
 
-	private EnumTipoUsuario(Integer valor) {
+	private String valor;
+
+	private EnumTipoUsuario(String valor) {
 		this.valor = valor;
 	}
 
-	public Integer getValor() {
+	public String getValor() {
 		return valor;
 	}
 
-	public void setValor(Integer valor) {
+	public void setValor(String valor) {
 		this.valor = valor;
 	}
-	
-	public static List<String> getRoles(Integer valor) {
-		if(valor==1) {
+
+	public static List<String> getRoles(String valor) {
+		if (valor.equals("USP")) {
 			return Arrays.asList("ROLE_SUPERADMIN");
 		}
-		if(valor==2) {
+		if (valor.equals("UADM")) {
 			return Arrays.asList("ROLE_ADMIN");
 		}
-		if(valor==3) {
-			return Arrays.asList("ROLE_OPERADOR");
+		if (valor.equals("UMED")) {
+			return Arrays.asList("ROLE_MEDICO");
 		}
-		if(valor==4) {
-			return Arrays.asList("ROLE_FACTURACION");
+		if (valor.equals("UASIS")) {
+			return Arrays.asList("ROLE_ASISTENTE");
 		}
-		if(valor==5) {
-			return Arrays.asList("ROLE_ASESOR");
+		if (valor.equals("UEXT")) {
+			return Arrays.asList("ROLE_EXTERNO");
 		}
-		if(valor==6) {
-			return Arrays.asList("ROLE_CLIENTE_USUARIO");
-		}
-		
+
 		return new ArrayList<>();
 	}
 }

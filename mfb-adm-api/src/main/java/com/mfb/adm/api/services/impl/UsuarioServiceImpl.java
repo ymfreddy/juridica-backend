@@ -138,7 +138,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		ent.setEmail(dto.getEmail());
 		ent.setEnabled(true);
 		ent.setIdEmpresa(empresa.getId());
-		ent.setIdTipoUsuario(EnumTipoUsuario.CLIENTE_USUARIO.getValor());
+		ent.setCodigoTipoUsuario(EnumTipoUsuario.EXTERNO.getValor());
 		ent.setUsername(username);
 		//ent.setPaterno(dto.getPaterno());
 		//ent.setCi(dto.getCi());
@@ -169,7 +169,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		ent.setCambiarClave(dto.getCambiarClave());
 		ent.setCelular(dto.getCelular());
 		ent.setCi(dto.getCi());
-		ent.setIdTipoUsuario(dto.getIdTipoUsuario());
+		ent.setCodigoTipoUsuario(dto.getCodigoTipoUsuario());
 		ent.setMaterno(dto.getMaterno());
 		ent.setPaterno(dto.getPaterno());
 		ent.setNombre(dto.getNombre());

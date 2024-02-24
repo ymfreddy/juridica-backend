@@ -51,7 +51,7 @@ public class LoginServiceImpl implements ILoginService {
 		}
 
 		// get roles
-		List<String> roles = EnumTipoUsuario.getRoles(existe.getIdTipoUsuario());
+		List<String> roles = EnumTipoUsuario.getRoles(existe.getCodigoTipoUsuario());
 		RespuestaLogin res = new RespuestaLogin();
 		// generar token
 		res.setToken(token.getJWTToken(existe.getUsername(), existe.getNit(), roles, minutosDuracion));
@@ -79,7 +79,7 @@ public class LoginServiceImpl implements ILoginService {
 		}
 
 		// get roles
-		List<String> roles = EnumTipoUsuario.getRoles(existe.getIdTipoUsuario());
+		List<String> roles = EnumTipoUsuario.getRoles(existe.getCodigoTipoUsuario());
 		// generar token
 		String nuevoToken = token.getJWTToken(existe.getUsername(), existe.getNit(), roles, minutosDuracion);
 		return RespuestaRest.builder().success(true).content(nuevoToken).message(MsgApp.RESPONSE_JWT_REFRESH).build();

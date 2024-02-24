@@ -15,7 +15,7 @@ import com.mfb.adm.core.query.ILoginQuery;
 @Repository
 public class LoginQueryImpl implements ILoginQuery {
 
-	final static String SQL_SELECT_USUARIO = "select us.id, us.id_empresa, us.id_par_tipo_usuario as id_tipo_usuario, us.username, \"password\", us.enabled, em.nit  "
+	final static String SQL_SELECT_USUARIO = "select us.id, us.id_empresa, us.codigo_tipo_usuario , us.username, \"password\", us.enabled, em.nit  "
 			+ "from adm.usuarios us inner join adm.empresas em on us.id_empresa=em.id where em.active is true and us.active is true ";
 
 	@Autowired

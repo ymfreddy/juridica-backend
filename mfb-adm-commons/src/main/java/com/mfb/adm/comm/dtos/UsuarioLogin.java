@@ -9,7 +9,7 @@ public class UsuarioLogin {
 
 	private Long id;
 	private Long idEmpresa;
-	private Integer idTipoUsuario;
+	private String codigoTipoUsuario;
 	private Long nit;
 	private String username;
 	private String password;

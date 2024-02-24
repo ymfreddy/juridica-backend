@@ -25,18 +25,11 @@ public class ConstApp {
 	public static final DateFormat FORMATO_GESTION = new SimpleDateFormat("yy");
 	public static final SimpleDateFormat FORMATO_HORA = new SimpleDateFormat("HH:mm");
 	public static final SimpleDateFormat FORMATO_DIA_SEMANA = new SimpleDateFormat("EEEE");
-	public static final DateFormat FORMATO_FECHA_QR = new SimpleDateFormat("yyyy-MM-dd");
+	public static final DateFormat FORMATO_FECHA_ISO = new SimpleDateFormat("yyyy-MM-dd");
 
 
-	public static final String OPERACION_DESCUENTO = "D";
-	public static final String OPERACION_REMISION = "R";
-	public static final String OPERACION_COMPRA = "C";
-	public static final String OPERACION_VENTA = "V";
-	public static final String OPERACION_PAGOS = "P";
-	public static final String OPERACION_TRASPASO = "T";
-	public static final String OPERACION_INTERESADO = "CL";
-	public static final String OPERACION_VISITA = "VI";
-	public static final String OPERACION_COTIZACION = "CT";
+	public static final String OPERACION_CITA = "CT";
+	
 
 	public static final BigDecimal VALOR_0 = new BigDecimal("0");
 	public static final BigDecimal TASA_EFECTIVA_MINERAS = new BigDecimal("0.1494253");

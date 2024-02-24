@@ -19,13 +19,9 @@ import com.mfb.adm.core.query.IAdmQuery;
 @Repository
 public class AdmQueryImpl implements IAdmQuery {
 
-	private final String SQL_SELECT_PARAMETRICA = "select id, nombre, descripcion, valor, tipo from adm.parametricas where active is true ";
+	private final String SQL_SELECT_PARAMETRICA = "select id, codigo, nombre, tipo from adm.parametricas where active is true ";
 	private final String SQL_SELECT_OPCION = "select id, titulo, ruta, icono, estilo, grupo, orden, descripcion from adm.opciones WHERE active order by grupo, orden";
 	private final String SQL_SELECT_OPCION_POR_IDS = "select id, titulo, ruta, icono, estilo, grupo, orden, descripcion from adm.opciones where active and id in (:ids) order by grupo, orden";
-	//private final String SQL_SELECT_SISTEMA = "SELECT id, nombre, version_sistema, tipo_sistema, modalidad, codigo_documento_sector FROM sfe.sistemas where active = true";
-	//private final String SQL_SELECT_ASOCIACION_RESUMEN = "select id, nombre_sistema, modalidad, ambiente, codigo_asociacion, codigo_documento_sector, documento_sector, conexion_automatica FROM sfe.v_asociaciones ";
-	private final String SQL_SELECT_ASOCIACION_RESUMEN_CODIGOS = "select id, nombre_sistema, modalidad, ambiente, codigo_asociacion, codigo_documento_sector, documento_sector, conexion_automatica FROM sfe.v_asociaciones where codigo_asociacion in (:codigos) order by nombre_sistema ";
-	private final String SQL_SELECT_ASOCIACION_RESUMEN_POR_NIT = "select id, nombre_sistema, modalidad, ambiente, codigo_asociacion, codigo_documento_sector, documento_sector, conexion_automatica FROM sfe.v_asociaciones where nit=:nit order by nombre_sistema";
 	
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;

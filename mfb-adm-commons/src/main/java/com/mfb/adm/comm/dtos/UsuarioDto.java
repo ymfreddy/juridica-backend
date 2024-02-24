@@ -8,7 +8,7 @@ import lombok.Setter;
 public class UsuarioDto {
 	private Long id;
 	private Long idEmpresa;
-	private Integer idTipoUsuario;
+	private String codigoTipoUsuario;
 	private String tipoUsuario;
 	private String nombre;
 	private String paterno;
@@ -26,7 +26,6 @@ public class UsuarioDto {
 	private String opciones;
 	private String asociaciones;
 	private String categorias;
-	private Boolean restaurante;
 	private Boolean impresionDirecta;
 	private Boolean descripcionAdicionalProducto;
 }
