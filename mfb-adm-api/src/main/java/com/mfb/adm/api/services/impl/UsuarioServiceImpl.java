@@ -144,7 +144,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		//ent.setCi(dto.getCi());
 		ent.setNombre(username);
 		ent.setPassword(dto.getPassword());
-		ent.setOpciones("3");
+		ent.setOpciones("200");
 		ent = repositorio.save(ent);
 		return RespuestaRest.builder().success(true).message(MsgApp.RESPONSE_PERSIST_SUCCESSFULLY).content(ent.getId())
 				.build();

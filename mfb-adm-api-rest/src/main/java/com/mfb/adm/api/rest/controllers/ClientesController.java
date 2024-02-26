@@ -64,7 +64,7 @@ public class ClientesController {
 	public ResponseEntity<?> listarPorCriterios(
 			@RequestParam(value = "idEmpresa", required = true) long idEmpresa,
 			@RequestParam(value = "codigoCliente", required = false) String codigoCliente,
-			@RequestParam(value = "codigoTipoDocumento", required = false) Integer codigoTipoDocumento,
+			@RequestParam(value = "codigoTipoDocumento", required = false) String codigoTipoDocumento,
 			@RequestParam(value = "resumen", required = false, defaultValue = "false") boolean resumen,
 			@RequestParam(value = "cantidadRegistros", required = false, defaultValue = "0") Integer cantidadRegistros,
 		    @RequestParam(value = "termino", required = false) String termino) {

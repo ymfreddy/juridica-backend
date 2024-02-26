@@ -20,7 +20,10 @@ import com.mfb.adm.comm.constants.MsgAdm;
 import com.mfb.adm.comm.constants.MsgApp;
 import com.mfb.adm.comm.dtos.EmpresaDto;
 import com.mfb.adm.comm.dtos.RespuestaRest;
+import com.mfb.adm.comm.enums.EnumTipoDocumentoIdentidad;
+import com.mfb.adm.core.entity.EntCliente;
 import com.mfb.adm.core.entity.EntEmpresa;
+import com.mfb.adm.core.repository.IClienteRepository;
 import com.mfb.adm.core.repository.IEmpresaRepository;
 
 @Service
@@ -28,6 +31,8 @@ public class EmpresaServiceImpl implements IEmpresaService {
 
 	@Autowired
 	private IEmpresaRepository repositorio;
+	@Autowired
+	private IClienteRepository repositorioCliente;
 
 	@Value("${ruta.logo}")
 	private String URL_LOGOS;
@@ -86,6 +91,16 @@ public class EmpresaServiceImpl implements IEmpresaService {
 		ent.setId(idGenerado);
 		ent = repositorio.save(ent);
 
+		// introducir los clientes por defecto
+        EntCliente cliente0 = new  EntCliente();
+        cliente0.setCodigoCliente("0");
+        cliente0.setNumeroDocumento("-");
+        cliente0.setCodigoTipoDocumentoIdentidad(EnumTipoDocumentoIdentidad.CI.getCodigo());
+        cliente0.setComplemento("");
+        cliente0.setNombre("S/N");
+        cliente0.setIdEmpresa(idGenerado);
+		repositorioCliente.save(cliente0);
+		
 		// copiar logo de 5571909 a nuevo nit
 		String fromFile = URL_LOGOS + "5571909017.png";
 		String toFile = URL_LOGOS + dto.getNit() + ".png";

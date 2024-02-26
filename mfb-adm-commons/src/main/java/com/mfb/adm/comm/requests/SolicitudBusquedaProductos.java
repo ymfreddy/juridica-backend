@@ -11,12 +11,18 @@ import lombok.ToString;
 @Setter
 @Builder
 @ToString
-public class SolicitudBusquedaClientes implements Serializable {
+public class SolicitudBusquedaProductos implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Long idEmpresa;
-	private String codigoCliente;
-	private String codigoTipoDocumento;
+	private Long idSucursal;
+	private Long idProducto;
+	private String codigosTipoProducto;
+	private Long idCategoria;
+	private String idsCategorias;
+	private String codigoProducto;
 	private Boolean resumen;
+	
 	private String termino;
-	private Integer cantidadRegistros;
+	private Integer cantidadRegistro;
+
 }

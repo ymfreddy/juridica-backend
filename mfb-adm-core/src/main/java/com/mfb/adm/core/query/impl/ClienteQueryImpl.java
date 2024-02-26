@@ -59,7 +59,7 @@ public class ClienteQueryImpl implements IClienteQuery {
 			sql += " id_empresa=:id_empresa ";
 			parameters.addValue("id_empresa", criterios.getIdEmpresa());
 		}
-		if (criterios.getCodigoTipoDocumento() != null && (long) criterios.getCodigoTipoDocumento() > 0) {
+		if (criterios.getCodigoTipoDocumento() != null && !criterios.getCodigoTipoDocumento().isEmpty()) {
 			sql += " and codigo_tipo_documento_identidad=:codigo_tipo_documento_identidad ";
 			parameters.addValue("codigo_tipo_documento_identidad", criterios.getCodigoTipoDocumento());
 		}
@@ -84,7 +84,7 @@ public class ClienteQueryImpl implements IClienteQuery {
 			sql += " id_empresa=:id_empresa ";
 			parameters.addValue("id_empresa", criterios.getIdEmpresa());
 		}
-		if (criterios.getCodigoTipoDocumento() != null && (long) criterios.getCodigoTipoDocumento() > 0) {
+		if (criterios.getCodigoTipoDocumento() != null && !criterios.getCodigoTipoDocumento().isEmpty()) {
 			sql += " and codigo_tipo_documento_identidad=:codigo_tipo_documento_identidad ";
 			parameters.addValue("codigo_tipo_documento_identidad", criterios.getCodigoTipoDocumento());
 		}
